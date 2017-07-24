@@ -1,5 +1,12 @@
 <html>
-    <head><title>Hello!</title></head>
+    <head>
+        <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+    <!-- BEGIN TRACKJS -->
+    <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
+    <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+    <!-- END TRACKJS -->
+    <% } %>
+        <title>Hello!</title></head>
     <body><h1>Hello!</h1>
         <table>
             <thead>
@@ -13,6 +20,5 @@
             <tbody id="users"></tbody>
         </table>
     <p>Good day</p>
-        <script src="bundle.js"></script>
 </body>
 </html>
